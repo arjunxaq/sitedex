@@ -8,9 +8,9 @@ export default async function HomePage() {
     .order("created_at", { ascending: false });
 
   if (error) {
-    console.error("Supabase error:", error);
-    return <p className="p-6 text-red-500">Failed to load curated sites.</p>;
-  }
+  console.error("Supabase fetch error:", error.message, error.details, error.hint);
+  return <p className="p-6 text-red-500">Failed to load curated sites.</p>;
+}
 
   console.log("sites:", sites);
 
