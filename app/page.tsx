@@ -1,5 +1,8 @@
 import { supabase } from "@/lib/supabaseClient";
 
+export const revalidate = 0; // disables Next.js caching
+
+
 export default async function HomePage() {
   // Fetch rows from "Curation" table
   const { data: sites, error } = await supabase
